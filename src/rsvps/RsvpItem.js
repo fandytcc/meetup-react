@@ -1,11 +1,20 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import './RsvpItem.css'
 
 export const rsvpShape = PropTypes.shape({
   eventName: PropTypes.string.isRequired,
   memberName: PropTypes.string.isRequired,
-  memberPhoto: PropTypes.string.isRequired
+  memberPhoto: PropTypes.string
 })
+
+// event = PropTypes.shape({
+//  event_name: PropTypes.string.isRequired
+// })
+// member = PropTypes.shape({
+//  member_name: PropTypes.string.isRequired,
+//  photo: PropTypes.string
+// })
 
 class RsvpItem extends PureComponent {
 

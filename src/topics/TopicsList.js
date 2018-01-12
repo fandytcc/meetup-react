@@ -1,5 +1,7 @@
 import React, { PureComponent } from 'react'
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import './TopicsList.css'
 
 class TopicsList extends PureComponent {
 	static propTypes = {
@@ -11,11 +13,8 @@ class TopicsList extends PureComponent {
 
 	render() {
 		return (
-      <div className="topics wrapper">
-        <header>
+      <div className="topics-wrapper">
           <h1>Topics Top 10</h1>
-        </header>
-
         <main>
           <ol>
             { this.props.topics.map(topic =>  (<li>{topic.topic} ({topic.count})</li>)) }
@@ -26,4 +25,8 @@ class TopicsList extends PureComponent {
 	}
 }
 
-export default TopicsList
+const mapStateToProps = ({ topics }) => ({
+  topics
+})
+
+export default connect(mapStateToProps)(TopicsList)

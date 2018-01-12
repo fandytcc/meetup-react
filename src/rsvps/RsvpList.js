@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import RsvpItem, { rsvpShape } from './RsvpItem'
 
@@ -27,4 +28,8 @@ class RsvpList extends PureComponent {
 	}
 }
 
-export default RsvpList
+const mapStateToProps = ({ rsvps }) => ({
+  rsvps
+})
+
+export default connect(mapStateToProps)(RsvpList)
